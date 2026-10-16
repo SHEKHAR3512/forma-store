@@ -1,0 +1,26 @@
+import type { CSSProperties } from 'react';
+const paths: Record<string, React.ReactNode> = {
+ arrow: <><path d="M4 12h15M13 5l7 7-7 7"/></>,
+ search: <><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4 4"/></>,
+ bag: <><path d="M5 7h14l1 14H4L5 7Z"/><path d="M9 8V5a3 3 0 0 1 6 0v3"/></>,
+ heart: <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/>,
+ user: <><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></>,
+ menu: <><path d="M4 6h16M4 12h16M4 18h16"/></>,
+ close: <path d="m6 6 12 12M6 18 18 6"/>,
+ plus: <path d="M12 5v14M5 12h14"/>,
+ minus: <path d="M5 12h14"/>,
+ check: <path d="m5 12 4 4L19 6"/>,
+ truck: <><path d="M2 5h12v12H2zM14 9h4l4 5v3h-8"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></>,
+ return: <><path d="M3 9h11a7 7 0 0 1 0 14M3 9l5-5M3 9l5 5"/></>,
+ shield: <><path d="m12 2 8 3v7c0 5-8 10-8 10S4 17 4 12V5l8-3Z"/><path d="m8 11 3 3 5-5"/></>,
+ leaf: <><path d="M20 3C6 1 2 8 5 15s13 5 15-12Z"/><path d="M3 21 15 9"/></>,
+ star: <path d="m12 2 3.1 6.3 6.9 1-5 4.8 1.2 6.9-6.2-3.3L5.8 21 7 14.1 2 9.3l6.9-1L12 2Z"/>,
+ chevron: <path d="m6 9 6 6 6-6"/>,
+ filter: <><path d="M4 7h16M4 17h16"/><circle cx="9" cy="7" r="2"/><circle cx="15" cy="17" r="2"/></>,
+ mail: <><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 6 9 7 9-7"/></>,
+ lock: <><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V6a4 4 0 0 1 8 0v4"/></>,
+ box: <><path d="m12 2 9 5v10l-9 5-9-5V7l9-5Z"/><path d="m3 7 9 5 9-5M12 12v10M7 4.5l9 5"/></>,
+ grid: <><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></>,
+ zoom: <><circle cx="10" cy="10" r="7"/><path d="m15 15 6 6M10 7v6M7 10h6"/></>,
+};
+export function Icon({ name, size = 20, style }: { name: string; size?: number; style?: CSSProperties }) { return <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" style={style}>{paths[name] ?? paths.arrow}</svg>; }
